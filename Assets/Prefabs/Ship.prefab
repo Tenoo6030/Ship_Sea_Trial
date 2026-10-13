@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 7883624514025081869}
   - component: {fileID: 6922733523305959690}
   - component: {fileID: 4325114066180252026}
+  - component: {fileID: 8922069066610469388}
   m_Layer: 0
-  m_Name: sail-a
+  m_Name: Sail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1959845868047894200}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 3.1385198, z: -0.6333724}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.1385198, z: -0.6333724}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -90,6 +91,23 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8922069066610469388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959845868047894200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da401dad73d20844a82ea81a49c1b591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SailController
+  sail: {fileID: 7883624514025081869}
+  sailDeployment: 0
+  sailRotation: 0
+  sailDeploymentSpeed: 20
+  sailRotationSpeed: 20
 --- !u!1 &2236498631076751377
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,8 +119,9 @@ GameObject:
   - component: {fileID: 1719234377122856612}
   - component: {fileID: 5497384801800069473}
   - component: {fileID: 1759630306709443271}
+  - component: {fileID: -3559166922554028755}
   m_Layer: 0
-  m_Name: ship-small
+  m_Name: Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,14 +135,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2236498631076751377}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.416548, y: 0.0000013514705, z: 6.8615203}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 7883624514025081869}
   - {fileID: 605112912978479772}
   - {fileID: 2808296250615084148}
-  - {fileID: 7883624514025081869}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5497384801800069473
@@ -183,6 +202,22 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-3559166922554028755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2236498631076751377}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b821fb652fd924582a13ba21843fff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShipController
+  sailController: {fileID: 8922069066610469388}
+  mass: 15
+  dragCoefficient: 5
+  speed: 2
 --- !u!1 &2362609292509739155
 GameObject:
   m_ObjectHideFlags: 0

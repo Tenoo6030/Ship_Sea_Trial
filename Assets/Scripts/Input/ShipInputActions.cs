@@ -93,111 +93,156 @@ public partial class @ShipInputActions: IInputActionCollection2, IDisposable
             ""id"": ""83dfd17e-5607-416a-8402-8c59bc4eb515"",
             ""actions"": [
                 {
-                    ""name"": ""FurlSail"",
-                    ""type"": ""Button"",
-                    ""id"": ""e817e2a4-3ea9-4d29-97fd-3a1b79993e02"",
-                    ""expectedControlType"": """",
+                    ""name"": ""SailDeployment"",
+                    ""type"": ""Value"",
+                    ""id"": ""7db00ba1-e8a0-44b7-bafc-71dbc1759734"",
+                    ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false,
+                    ""initialStateCheck"": true,
                     ""priority"": 0
                 },
                 {
-                    ""name"": ""DeploySail"",
-                    ""type"": ""Button"",
-                    ""id"": ""2fe4e853-99a9-407d-8d29-1638885b1284"",
-                    ""expectedControlType"": """",
+                    ""name"": ""SailRotation"",
+                    ""type"": ""Value"",
+                    ""id"": ""5e0adcea-98a6-4065-8ba1-794f52ab26d5"",
+                    ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false,
-                    ""priority"": 0
-                },
-                {
-                    ""name"": ""New action"",
-                    ""type"": ""Button"",
-                    ""id"": ""5ac633f0-a075-4525-853f-c18dd52c9515"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false,
+                    ""initialStateCheck"": true,
                     ""priority"": 0
                 }
             ],
             ""bindings"": [
                 {
-                    ""name"": """",
-                    ""id"": ""3170fd5e-40af-4b02-b2d5-f922e885be18"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard"",
-                    ""action"": ""FurlSail"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""71a7a99e-d7ef-4a1d-98db-aea4f97913a1"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard"",
-                    ""action"": ""FurlSail"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""228baffa-5f2c-45bc-b829-539913d6acbe"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard"",
-                    ""action"": ""DeploySail"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""025e0711-ec96-4665-b6ef-600c6c1766e2"",
-                    ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard"",
-                    ""action"": ""DeploySail"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""70192a84-03eb-4294-85a8-fa1816abf797"",
+                    ""name"": ""W/S"",
+                    ""id"": ""7556ea6b-d892-4938-a86b-991af62ce81d"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""SailDeployment"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
-                    ""id"": ""b3cf2fc7-d4ea-4452-8dc7-adeb4a1913ec"",
-                    ""path"": ""<Keyboard>/a"",
+                    ""name"": ""positive"",
+                    ""id"": ""7aebb767-ec91-429f-a83e-a9be6075c73a"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Keyboard"",
-                    ""action"": ""New action"",
+                    ""groups"": """",
+                    ""action"": ""SailDeployment"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""negative"",
+                    ""id"": ""cd17b2d2-c734-4df2-a2a2-bd96bef004a7"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SailDeployment"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Up/Down Arrow"",
+                    ""id"": ""cbbc9c71-5c04-4141-9bb8-f961e40a795b"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SailDeployment"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
                     ""name"": ""positive"",
-                    ""id"": ""42471f95-0746-47f8-b5fe-f15812bfac96"",
+                    ""id"": ""df4619db-1c84-456f-bfc9-0f5291952e53"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SailDeployment"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""b678e358-7a41-4811-a81a-cd2719561ac9"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SailDeployment"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""A/D"",
+                    ""id"": ""b1fc1ed6-07eb-454c-b719-730366cda79a"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SailRotation"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""da894b52-b4d0-4f20-991d-07e341815213"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Keyboard"",
-                    ""action"": ""New action"",
+                    ""groups"": """",
+                    ""action"": ""SailRotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""2db9030b-d1f7-4b4a-a5dd-ceb7ac829c4b"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SailRotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Left/Right Arrow"",
+                    ""id"": ""593c2320-5d52-4ce5-a8a4-dc4008423fdc"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SailRotation"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""0af733ca-526a-48cd-8a52-92934bfc3cc6"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SailRotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""271e79a2-df6d-496c-b729-601854a0ca64"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SailRotation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -220,9 +265,8 @@ public partial class @ShipInputActions: IInputActionCollection2, IDisposable
 }");
         // Ship
         m_Ship = asset.FindActionMap("Ship", throwIfNotFound: true);
-        m_Ship_FurlSail = m_Ship.FindAction("FurlSail", throwIfNotFound: true);
-        m_Ship_DeploySail = m_Ship.FindAction("DeploySail", throwIfNotFound: true);
-        m_Ship_Newaction = m_Ship.FindAction("New action", throwIfNotFound: true);
+        m_Ship_SailDeployment = m_Ship.FindAction("SailDeployment", throwIfNotFound: true);
+        m_Ship_SailRotation = m_Ship.FindAction("SailRotation", throwIfNotFound: true);
     }
 
     ~@ShipInputActions()
@@ -303,9 +347,8 @@ public partial class @ShipInputActions: IInputActionCollection2, IDisposable
     // Ship
     private readonly InputActionMap m_Ship;
     private List<IShipActions> m_ShipActionsCallbackInterfaces = new List<IShipActions>();
-    private readonly InputAction m_Ship_FurlSail;
-    private readonly InputAction m_Ship_DeploySail;
-    private readonly InputAction m_Ship_Newaction;
+    private readonly InputAction m_Ship_SailDeployment;
+    private readonly InputAction m_Ship_SailRotation;
     /// <summary>
     /// Provides access to input actions defined in input action map "Ship".
     /// </summary>
@@ -318,17 +361,13 @@ public partial class @ShipInputActions: IInputActionCollection2, IDisposable
         /// </summary>
         public ShipActions(@ShipInputActions wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "Ship/FurlSail".
+        /// Provides access to the underlying input action "Ship/SailDeployment".
         /// </summary>
-        public InputAction @FurlSail => m_Wrapper.m_Ship_FurlSail;
+        public InputAction @SailDeployment => m_Wrapper.m_Ship_SailDeployment;
         /// <summary>
-        /// Provides access to the underlying input action "Ship/DeploySail".
+        /// Provides access to the underlying input action "Ship/SailRotation".
         /// </summary>
-        public InputAction @DeploySail => m_Wrapper.m_Ship_DeploySail;
-        /// <summary>
-        /// Provides access to the underlying input action "Ship/Newaction".
-        /// </summary>
-        public InputAction @Newaction => m_Wrapper.m_Ship_Newaction;
+        public InputAction @SailRotation => m_Wrapper.m_Ship_SailRotation;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -355,15 +394,12 @@ public partial class @ShipInputActions: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_ShipActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_ShipActionsCallbackInterfaces.Add(instance);
-            @FurlSail.started += instance.OnFurlSail;
-            @FurlSail.performed += instance.OnFurlSail;
-            @FurlSail.canceled += instance.OnFurlSail;
-            @DeploySail.started += instance.OnDeploySail;
-            @DeploySail.performed += instance.OnDeploySail;
-            @DeploySail.canceled += instance.OnDeploySail;
-            @Newaction.started += instance.OnNewaction;
-            @Newaction.performed += instance.OnNewaction;
-            @Newaction.canceled += instance.OnNewaction;
+            @SailDeployment.started += instance.OnSailDeployment;
+            @SailDeployment.performed += instance.OnSailDeployment;
+            @SailDeployment.canceled += instance.OnSailDeployment;
+            @SailRotation.started += instance.OnSailRotation;
+            @SailRotation.performed += instance.OnSailRotation;
+            @SailRotation.canceled += instance.OnSailRotation;
         }
 
         /// <summary>
@@ -375,15 +411,12 @@ public partial class @ShipInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="ShipActions" />
         private void UnregisterCallbacks(IShipActions instance)
         {
-            @FurlSail.started -= instance.OnFurlSail;
-            @FurlSail.performed -= instance.OnFurlSail;
-            @FurlSail.canceled -= instance.OnFurlSail;
-            @DeploySail.started -= instance.OnDeploySail;
-            @DeploySail.performed -= instance.OnDeploySail;
-            @DeploySail.canceled -= instance.OnDeploySail;
-            @Newaction.started -= instance.OnNewaction;
-            @Newaction.performed -= instance.OnNewaction;
-            @Newaction.canceled -= instance.OnNewaction;
+            @SailDeployment.started -= instance.OnSailDeployment;
+            @SailDeployment.performed -= instance.OnSailDeployment;
+            @SailDeployment.canceled -= instance.OnSailDeployment;
+            @SailRotation.started -= instance.OnSailRotation;
+            @SailRotation.performed -= instance.OnSailRotation;
+            @SailRotation.canceled -= instance.OnSailRotation;
         }
 
         /// <summary>
@@ -438,25 +471,18 @@ public partial class @ShipInputActions: IInputActionCollection2, IDisposable
     public interface IShipActions
     {
         /// <summary>
-        /// Method invoked when associated input action "FurlSail" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "SailDeployment" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnFurlSail(InputAction.CallbackContext context);
+        void OnSailDeployment(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "DeploySail" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "SailRotation" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnDeploySail(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "New action" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnNewaction(InputAction.CallbackContext context);
+        void OnSailRotation(InputAction.CallbackContext context);
     }
 }
