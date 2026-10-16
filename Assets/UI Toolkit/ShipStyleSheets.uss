@@ -1,0 +1,31 @@
+:root {
+}
+
+.Label {
+    font-size: 35px;
+    align-items: flex-start;
+    align-content: auto;
+    align-self: flex-start;
+    justify-content: flex-start;
+    padding-bottom: 0;
+    padding-top: 0;
+    -unity-text-align: upper-left;
+    color: rgb(255, 255, 255);
+    top: 27px;
+    left: 27px;
+    padding-right: 0;
+    padding-left: 0;
+    margin-top: 25px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    margin-left: 25px;
+    -unity-text-auto-size: none;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-right-width: 0;
+    border-left-width: 0;
+}

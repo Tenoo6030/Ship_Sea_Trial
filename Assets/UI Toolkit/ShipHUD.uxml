@@ -1,0 +1,7 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/ShipStyleSheets.uss?fileID=7433441132597879392&amp;guid=71c4e67bbc7f27046b473238fd865127&amp;type=3#ShipStyleSheets"/>
+    <ui:VisualElement name="Background" style="flex-grow: 0; top: 10px; left: 10px; width: 481px; height: 191px; align-self: flex-start; flex-shrink: 1; background-color: rgba(15, 15, 72, 0.965); flex-direction: column; align-items: flex-start; justify-content: flex-start; align-content: flex-start;">
+        <ui:Label text="Sail Deployment: 0%" name="SailDeploymentLabel" enable-rich-text="false" class="Label" style="top: 0; left: 0;"/>
+        <ui:Label text="Sail Rotation: 0°" name="SailRotationLabel" class="Label" style="top: 0; left: 0;"/>
+    </ui:VisualElement>
+</ui:UXML>
