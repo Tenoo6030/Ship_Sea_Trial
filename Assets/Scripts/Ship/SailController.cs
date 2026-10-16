@@ -10,9 +10,11 @@ public class SailController : MonoBehaviour
     [Header("Sail")]
     [SerializeField, Range(0f, 100f)]
     private float sailDeployment = 0f;
+    private float lastSailDeployment;
 
     [SerializeField, Range(-45f, 45f)]
     private float sailRotation = 0f;
+    private float lastSailRotation;
 
     [Header("Controls")]
     private ShipInputActions inputActions;
@@ -55,26 +57,26 @@ public class SailController : MonoBehaviour
         float input = inputActions.Ship
             .SailDeployment.ReadValue<float>();
 
-        if (!Mathf.Approximately(input, 0f))
+        float newValue =
+            Mathf.Clamp(sailDeployment
+            + input * sailDeploymentSpeed
+            * Time.deltaTime, 0f, 100f
+            );
+
+        if (Mathf.Approximately(lastSailDeployment, newValue))
         {
-            float newValue =
-                Mathf.Clamp(sailDeployment
-                + input * sailDeploymentSpeed
-                * Time.deltaTime, 0f, 100f
-                );
-
-            if (Mathf.Approximately(sailDeployment, newValue))
-            {
-                return;
-            }
-
-            sailDeployment = newValue;
+            return;
         }
-     
+
+        sailDeployment = newValue;
+
         sail.localScale =
-            new Vector3(1f, sailDeployment / 100f, 1f);
+                new Vector3(1f, sailDeployment / 100f, 1f);
 
         OnSailDeploymentChanged?.Invoke(sailDeployment);
+
+        lastSailDeployment = sailDeployment;
+
     }
 
     private void UpdateSailRotation()
@@ -82,25 +84,24 @@ public class SailController : MonoBehaviour
         float input = inputActions.Ship
             .SailRotation.ReadValue<float>();
 
-        if (!Mathf.Approximately(input, 0f))
+        float newValue =
+            Mathf.Clamp(sailRotation
+            + input * sailRotationSpeed
+            * Time.deltaTime, -45f, 45f
+            );
+
+        if (Mathf.Approximately(lastSailRotation, newValue))
         {
-            float newValue =
-                Mathf.Clamp(sailRotation
-                + input * sailRotationSpeed
-                * Time.deltaTime, -45f, 45f
-                );
-
-            if (Mathf.Approximately(sailRotation, newValue))
-            {
-                return;
-            }
-
-            sailRotation = newValue;
+            return;
         }
+
+        sailRotation = newValue;
 
         sail.localRotation =
             Quaternion.Euler(0f, sailRotation, 0f);
 
         OnSailRotationChanged?.Invoke(sailRotation);
+
+        lastSailRotation = sailRotation;
     }
 }
