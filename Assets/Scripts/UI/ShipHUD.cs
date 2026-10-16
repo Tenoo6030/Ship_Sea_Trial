@@ -13,7 +13,10 @@ public class ShipHUD : MonoBehaviour
 
     private void OnEnable()
     {
-        panelRenderer = GetComponent<PanelRenderer>();
+        if (panelRenderer == null)
+        {
+            panelRenderer = GetComponent<PanelRenderer>();
+        }
 
         panelRenderer.RegisterUIReloadCallback(OnUIReload);
 
@@ -24,6 +27,9 @@ public class ShipHUD : MonoBehaviour
     private void OnDisable()
     {
         panelRenderer.UnregisterUIReloadCallback(OnUIReload);
+
+        sailController.OnSailDeploymentChanged -= SetDeployment;
+        sailController.OnSailRotationChanged -= SetRotation;
     }
 
     private void OnUIReload(
