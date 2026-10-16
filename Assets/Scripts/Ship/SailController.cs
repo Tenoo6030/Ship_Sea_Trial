@@ -52,6 +52,10 @@ public class SailController : MonoBehaviour
         UpdateSailRotation();
     }
 
+    /// <summary>
+    /// Updates sail deployment based on player input
+    /// or Inspector changes, then notifies subscribers.
+    /// </summary>
     private void UpdateSailDeployment()
     {
         float input = inputActions.Ship
@@ -79,6 +83,10 @@ public class SailController : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Updates sail rotation based on player input
+    /// or Inspector changes, then notifies subscribers.
+    /// </summary>
     private void UpdateSailRotation()
     {
         float input = inputActions.Ship

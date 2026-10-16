@@ -49,6 +49,11 @@ public class ShipController : MonoBehaviour
         CalculateMovement();
     }
 
+    /// <summary>
+    /// Calculates ship movement based on wind,
+    /// sail force, and water resistance.
+    /// Updates the ship speed and position
+    /// </summary>
     private void CalculateMovement()
     {
         if (mass <= 0f)
@@ -60,28 +65,37 @@ public class ShipController : MonoBehaviour
         Vector3 sailDirection =
             sailController.transform.forward;
 
+        // Project the wind vector onto the sail direction.
         float windProjection =
             Vector3.Dot(sailDirection, wind);
 
+        // Calculate sail force using quadratic wind scaling.
         Vector3 sailForce =
             Mathf.Abs(windProjection) * sailDeployment
             * windProjection * sailDirection;
 
+        // Project sail force onto ship's forward axis
         Vector3 shipForce =
             Vector3.Dot(shipDirection, sailForce)
             * shipDirection;
 
+        // Calculate net force with quadratic water drag.
         Vector3 force =
             shipForce - (dragCoefficient * Mathf.Abs(speed)
             * speed * shipDirection);
 
+        // Calculate acceleration using Newton's second law.
         Vector3 acceleration = force / mass;
 
+
+        // Project acceleration onto the ship's forward axis.
         float forwardAcceleration =
             Vector3.Dot(acceleration, shipDirection);
 
+
         speed += forwardAcceleration * Time.deltaTime;
 
+        // Stop the ship at very low speed with no sail.
         if (sailDeployment <= 0f
             && Mathf.Abs(speed) < 0.5f)
         {

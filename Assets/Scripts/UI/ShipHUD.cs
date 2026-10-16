@@ -32,6 +32,9 @@ public class ShipHUD : MonoBehaviour
         sailController.OnSailRotationChanged -= SetRotation;
     }
 
+    /// <summary>
+    /// Retrieves sail status labels after the UI reloads.
+    /// </summary>
     private void OnUIReload(
         PanelRenderer renderer,
         VisualElement element,
@@ -44,6 +47,13 @@ public class ShipHUD : MonoBehaviour
             element.Q<Label>("SailRotationLabel");
     }
 
+    /// <summary>
+    /// Updates the UI with the current sail deployment
+    /// value received through an event.
+    /// </summary>
+    /// <param name="value">
+    /// The current sail deployment percentage (0–100).
+    /// </param>
     private void SetDeployment(float value)
     {
         if (sailDeploymentLabel != null)
@@ -53,6 +63,13 @@ public class ShipHUD : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Updates the UI with the current sail rotation
+    /// value received through an event.
+    /// </summary>
+    /// <param name="value">
+    /// The current sail rotation angle in degrees.
+    /// </param>
     private void SetRotation(float value)
     {
         if (sailRotationLabel != null)
