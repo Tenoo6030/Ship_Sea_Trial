@@ -64,7 +64,7 @@ public class ShipController : MonoBehaviour
             Vector3.Dot(sailDirection, wind);
 
         Vector3 sailForce =
-            Mathf.Abs(windProjection) * sailDeployment 
+            Mathf.Abs(windProjection) * sailDeployment
             * windProjection * sailDirection;
 
         Vector3 shipForce =
@@ -80,7 +80,13 @@ public class ShipController : MonoBehaviour
         float forwardAcceleration =
             Vector3.Dot(acceleration, shipDirection);
 
-        speed = forwardAcceleration * Time.deltaTime;
+        speed += forwardAcceleration * Time.deltaTime;
+
+        if (sailDeployment <= 0f
+            && Mathf.Abs(speed) < 0.5f)
+        {
+            speed = 0f;
+        }
 
         transform.position +=
            speed * Time.deltaTime * shipDirection;
